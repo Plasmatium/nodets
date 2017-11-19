@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "typescript test",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rm -rf dist/ && webpack --watch&",
+    "clean": "rm -rf dist/"
+  },
+  "author": "J.W.",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "@types/webpack": "^3.8.1",
+    "source-map-loader": "^0.2.3",
+    "ts-loader": "^3.1.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1"
+  }
+}
