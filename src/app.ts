@@ -1,16 +1,18 @@
-import axios from 'axios'
+import { setInterval } from "timers";
 
-console.log('hello world')
-console.log(axios)
+import {va} from './worker'
+// interface NodeModule {
+//   hot: {
+//     accept: (lib: string, callback: () => void) => void
+//   }
+// }
+setInterval(() => {
+  console.log(va)
+}, 1000)
 
-interface Block {
-  x: number
-  y: boolean
+let m = <any>module
+if (m.hot) {
+  m.hot.accept('./worker', () => {
+    // import {va} from './worker'
+  })
 }
-
-let va: Block = {
-  x: 2,
-  y: false
-}
-console.log(va)
-debugger

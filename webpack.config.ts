@@ -26,7 +26,10 @@ const config: webpack.Configuration = {
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+  resolve: {
+    extensions: ['.js', '.ts']
+  }
 }
 
 export default config
