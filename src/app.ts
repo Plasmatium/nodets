@@ -1,18 +1,20 @@
-import { setInterval } from "timers";
+import { setInterval } from "timers"
 
-import {va} from './worker'
+let {va} = require('./worker')
 // interface NodeModule {
 //   hot: {
 //     accept: (lib: string, callback: () => void) => void
 //   }
 // }
-setInterval(() => {
-  console.log(va)
-}, 1000)
 
 let m = <any>module
+let count = 0
+setInterval(() => {
+  console.log(va, ++count)
+}, 1000)
+
 if (m.hot) {
   m.hot.accept('./worker', () => {
-    // import {va} from './worker'
+    va = require('./worker').va
   })
 }

@@ -9,7 +9,7 @@ interface Block {
 }
 
 let va: Block = {
-  x: 322,
+  x: 333,
   y: false
 }
 console.log(va)
